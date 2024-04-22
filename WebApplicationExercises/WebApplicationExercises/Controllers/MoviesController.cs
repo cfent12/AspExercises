@@ -76,7 +76,7 @@ namespace WebApplicationExercises.Controllers
         // POST: Movies/Edit/5
         // 초과 게시 공격으로부터 보호하려면 바인딩하려는 특정 속성을 사용하도록 설정하세요. 
         // 자세한 내용은 https://go.microsoft.com/fwlink/?LinkId=317598을(를) 참조하세요.
-        [HttpPost]
+        [HttpPost] // 이 특성은 POST 요청에 대해서만 메서드의 Edit 오버로드를 호출할 수 있도록 지정합니다.
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
         {
